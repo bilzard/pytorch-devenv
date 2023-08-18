@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+    - jupyter
+    - lab
+    - --ip=0.0.0.0
+    - --allow-root
+    - --no-browser
+    - --collaborative
+    - --config=/pytorch-devenv/jupyter_lab_config.py
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 8888
+      published: "8888"
+      protocol: tcp
+    runtime: nvidia
+    volumes:
+    - type: bind
+      source: ./working
+      target: /pytorch-devenv/working
+      bind:
+        create_host_path: true
+    - type: bind
+      source: ${HOME}/.gitignore_global
+      target: /root/.gitignore_global
+      bind:
+        create_host_path: true
+    shm_size: "64gb"
+    working_dir: /pytorch-devenv/working
+networks:
+  default:
+    name: pytorch-devenv_default

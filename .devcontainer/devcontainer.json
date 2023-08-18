@@ -1,0 +1,22 @@
+{
+	"name": "Pytorch Development Environment",
+
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"docker-compose.yml"
+	],
+	"service": "jupyter",
+	"workspaceFolder": "/pytorch-devenv/working",
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "eamodio.gitlens",
+    "ionutvmi.path-autocomplete",
+    "ms-python.black-formatter",
+    "ms-python.isort",
+    "github.copilot",
+    "streetsidesoftware.code-spell-checker",
+    "ms-toolsai.vscode-jupyter-cell-tags",
+    "oderwat.indent-rainbow"
+  ]
+}
