@@ -19,6 +19,10 @@ services:
       target: 8888
       published: "8888"
       protocol: tcp
+    - mode: ingress
+      target: 8000
+      published: "8000"
+      protocol: tcp
     runtime: nvidia
     volumes:
     - type: bind
