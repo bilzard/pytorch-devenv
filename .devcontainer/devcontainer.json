@@ -17,6 +17,7 @@
     "github.copilot",
     "streetsidesoftware.code-spell-checker",
     "ms-toolsai.vscode-jupyter-cell-tags",
-    "oderwat.indent-rainbow"
+    "oderwat.indent-rainbow",
+    "ms-python.flake8"
   ]
 }
